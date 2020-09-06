@@ -22,5 +22,10 @@ jobs:
           pip install pipenv
           pipenv install --dev
       
+      - name: Move project to Ansible-required location
+        run: |
+          mkdir -p ~/.ansible/roles/artis3n.CHANGEME
+          cp -r ./ ~/.ansible/roles/artis3n.CHANGEME
+      
       - name: Test
         run: pipenv run molecule test
