@@ -10,6 +10,7 @@ lint: |
   set -e
   echo "PWD: $PWD"
   ansible-lint
+  yamllint .
 platforms:
   - name: instance
     image: docker.io/pycontribs/centos:8
